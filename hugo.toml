@@ -1,10 +1,7 @@
 baseURL = 'https://clarkthomase.com/'
 languageCode = 'en-us'
 title = 'Tom Clark | Infrastructure & Homelab Portfolio'
-
-[module]
-  [[module.imports]]
-    path = 'github.com/adityatelange/hugo-PaperMod'
+theme = 'github.com/adityatelange/hugo-PaperMod'
 
 [params]
   env = 'production'
@@ -24,7 +21,7 @@ title = 'Tom Clark | Infrastructure & Homelab Portfolio'
 
 [[params.socialIcons]]
   name = "linkedin"
-  url = "https://linkedin.com/in/clarkthomas"
+  url = "https://linkedin.com/in/clarkthomase"
 
 [menu]
   [[menu.main]]
