@@ -13,11 +13,11 @@ theme = 'PaperMod'
 
 [params.homeInfoParams]
   Title = "Welcome to My Homelab"
-  Content = "A live breakdown of my infrastructure, multi-VLAN network topology, Docker services, and technical documentation."
+  Content = """A live breakdown of my infrastructure, multi-VLAN network topology, Docker services, and technical documentation."""
 
 [[params.socialIcons]]
   name = "github"
-  url = "https://github.com/Tomias26
+  url = "https://github.com/tomias26"
 
 [[params.socialIcons]]
   name = "linkedin"
