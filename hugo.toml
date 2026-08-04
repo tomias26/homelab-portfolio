@@ -1,7 +1,7 @@
 baseURL = 'https://clarkthomase.com/'
 languageCode = 'en-us'
 title = 'Tom Clark | Infrastructure & Homelab Portfolio'
-theme = 'github.com/adityatelange/hugo-PaperMod'
+theme = 'PaperMod'
 
 [params]
   env = 'production'
