@@ -1,0 +1,4 @@
+# PaperMod Theme Config
+params:
+  homeInfoParams:
+    Title: "Welcome to My Homelab"
