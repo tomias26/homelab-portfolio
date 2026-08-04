@@ -1,0 +1,21 @@
+{{- define "main" }}
+<article class="first-entry home-info">
+    <header class="entry-header">
+        <h1>{{ .Site.Params.homeInfoParams.Title }}</h1>
+    </header>
+    <div class="entry-content">
+        <p>{{ .Site.Params.homeInfoParams.Content }}</p>
+    </div>
+</article>
+
+{{- range .Site.RegularPages }}
+<article class="post-entry">
+  <header class="entry-header">
+    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+  </header>
+  <div class="entry-content">
+    <p>{{ .Summary }}</p>
+  </div>
+</article>
+{{- end }}
+{{- end }}
