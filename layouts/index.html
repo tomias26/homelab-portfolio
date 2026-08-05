@@ -1,21 +1,30 @@
-{{- define "main" }}
-<article class="first-entry home-info">
-    <header class="entry-header">
-        <h1>{{ .Site.Params.homeInfoParams.Title }}</h1>
-    </header>
-    <div class="entry-content">
-        <p>{{ .Site.Params.homeInfoParams.Content }}</p>
-    </div>
-</article>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tom Clark | Portfolio</title>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            max-width: 800px; 
+            margin: 40px auto; 
+            padding: 0 20px; 
+            background: #121212; 
+            color: #e0e0e0; 
+            line-height: 1.6; 
+        }
+        h1 { color: #58a6ff; border-bottom: 1px solid #30363d; padding-bottom: 10px; }
+        .card { background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 20px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Tom Clark</h1>
+    <p>Welcome to my technical portfolio documenting my homelab setup, network architecture, and projects.</p>
 
-{{- range .Site.RegularPages }}
-<article class="post-entry">
-  <header class="entry-header">
-    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-  </header>
-  <div class="entry-content">
-    <p>{{ .Summary }}</p>
-  </div>
-</article>
-{{- end }}
-{{- end }}
+    <div class="card">
+        <h2>Homelab Infrastructure</h2>
+        <p>Managing network services, virtualized environments, and containerized applications.</p>
+    </div>
+</body>
+</html>
