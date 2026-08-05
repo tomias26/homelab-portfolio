@@ -3,28 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tom Clark | Portfolio</title>
+    <title>Thomas Clark | Systems Operations & IT Architecture Portfolio</title>
     <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --border-color: #30363d;
+            --text-main: #c9d1d9;
+            --text-heading: #f0f6fc;
+            --accent-blue: #58a6ff;
+            --accent-green: #3fb950;
+            --accent-purple: #bc8cff;
+            --badge-bg: #21262d;
+        }
+
         body { 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-            max-width: 800px; 
+            max-width: 950px; 
             margin: 40px auto; 
             padding: 0 20px; 
-            background: #121212; 
-            color: #e0e0e0; 
+            background: var(--bg-color); 
+            color: var(--text-main); 
             line-height: 1.6; 
         }
-        h1 { color: #58a6ff; border-bottom: 1px solid #30363d; padding-bottom: 10px; }
-        .card { background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 20px; margin-top: 20px; }
+
+        header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 24px;
+            margin-bottom: 32px;
+        }
+
+        h1 { color: var(--text-heading); font-size: 2.2rem; margin-bottom: 6px; }
+        .subtitle { color: var(--accent-blue); font-size: 1.1rem; font-weight: 600; margin-top: 0; }
+        .contact-bar { font-size: 0.9rem; color: #8b949e; margin-top: 10px; }
+        .contact-bar a { color: var(--accent-blue); text-decoration: none; }
+
+        .cert-badge {
+            display: inline-block;
+            background: var(--badge-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-green);
+            margin-right: 8px;
+            margin-top: 8px;
+        }
+
+        h2 { 
+            color: var(--text-heading); 
+            border-bottom: 1px solid var(--border-color); 
+            padding-bottom: 8px; 
+            margin-top: 36px;
+        }
+
+        .card { 
+            background: var(--card-bg); 
+            border: 1px solid var(--border-color); 
+            border-radius: 8px; 
+            padding: 20px; 
+            margin-top: 16px; 
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        @media (max-width: 650px) {
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+
+        .tech-tag {
+            display: inline-block;
+            background: rgba(88, 166, 255, 0.15);
+            color: var(--accent-blue);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin: 2px;
+            font-family: monospace;
+        }
+
+        .alert-box {
+            background: rgba(188, 140, 255, 0.1);
+            border-left: 4px solid var(--accent-purple);
+            padding: 12px 16px;
+            margin: 16px 0;
+            border-radius: 0 6px 6px 0;
+        }
     </style>
 </head>
 <body>
-    <h1>Tom Clark</h1>
-    <p>Welcome to my technical portfolio documenting my homelab setup, network architecture, and projects.</p>
 
-    <div class="card">
-        <h2>Homelab Infrastructure</h2>
-        <p>Managing network services, virtualized environments, and containerized applications.</p>
+    <header>
+        <h1>Thomas Clark, MS</h1>
+        <div class="subtitle">IT Operations Specialist & Systems Engineer</div>
+        <div>
+            <span class="cert-badge">CompTIA A+ Certified</span>
+            <span class="cert-badge">CompTIA Network+ Certified</span>
+            <span class="cert-badge">MS Management Information Systems</span>
+        </div>
+        <div class="contact-bar">
+            Monson, MA | <a href="mailto:clarkthomase@gmail.com">clarkthomase@gmail.com</a> | <a href="https://linkedin.com/in/clarkthomase/" target="_blank">LinkedIn</a>
+        </div>
+    </header>
+
+    <section id="about">
+        <h2>Professional Overview</h2>
+        <div class="card">
+            <p>Operations and Systems Specialist bringing 10+ years of enterprise process control, cross-platform issue triage, technical writing, and hands-on systems administration. Combining formal administrative leadership with an MS in Management Information Systems and CompTIA Network+ credentials, I specialize in building resilient, segmented network topologies, virtualized server infrastructures, and clear standard operating procedures (SOPs).</p>
+        </div>
+    </section>
+
+    <section id="architecture">
+        <h2>Homelab & Network Architecture</h2>
+        
+        <div class="grid-2">
+            <div class="card">
+                <h3 style="color: var(--accent-blue); margin-top:0;">Routing & Network Core</h3>
+                <ul>
+                    <li><strong>Custom pfSense Router:</strong> Self-built security gateway managing inter-VLAN routing, stateful firewall rules, DHCP scopes, and local DNS.</li>
+                    <li><strong>Switching & Wireless:</strong> Dual Omada Gigabit PoE switches, Omada Hardware Controller, dual Omada APs, and dedicated Ubiquiti AP.</li>
+                    <li><strong>VLAN Architecture:</strong>
+                        <br><span class="tech-tag">VLAN 10: Servers</span>
+                        <span class="tech-tag">VLAN 20: Security Cameras</span>
+                        <span class="tech-tag">VLAN 30: Guest Network</span>
+                        <span class="tech-tag">VLAN 40: Dedicated Work Isolation</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3 style="color: var(--accent-blue); margin-top:0;">Compute & Storage Nodes</h3>
+                <ul>
+                    <li><strong>Primary NAS Node (Self-Built):</strong> Unraid OS, 214TB raw storage capacity, host for containerized ecosystem (media, automation, reverse proxy).</li>
+                    <li><strong>Backup NAS Node (Self-Built):</strong> Secondary Unraid OS target handling automated, scheduled array syncs on an isolated subnet.</li>
+                    <li><strong>Off-site/NAS Backups:</strong> Dual off-the-shelf NAS appliances for dedicated configuration snapshots and raw photo vault backups.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3 style="color: var(--accent-blue); margin-top:0;">Edge AI & Virtualization</h3>
+            <div class="grid-2">
+                <div>
+                    <h4>Dedicated AI / NVR Server (Self-Built)</h4>
+                    <p>Ubuntu Server running <strong>Frigate NVR</strong> and local LLM models. Leverages an <strong>NVIDIA RTX GPU</strong> for hardware-accelerated computer vision object detection and local inference processing.</p>
+                </div>
+                <div>
+                    <h4>Proxmox Hypervisor Node</h4>
+                    <p>Mini PC host running Proxmox VE. Hosts <strong>Home Assistant</strong> virtual machine integrating Frigate AI triggers, local smart-lighting automations, edge MQTT brokers, and centralized media distribution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="troubleshooting">
+        <h2>Systems Triage & Performance Optimization</h2>
+        
+        <div class="card">
+            <h3 style="margin-top:0;">Case Study: Resolving Network Switch CPU Spikes & RTSP Stream Degradation</h3>
+            <p><strong>Problem:</strong> During security camera stream ingestion, the primary core network switch experienced severe CPU load spikes (reaching 90%+ utilization), causing packet drops and delayed video rendering across local interfaces.</p>
+            <p><strong>Root-Cause Analysis:</strong> Isolated the high CPU utilization to an aggressive High-Bitrate RTSP stream broadcast from a Reolink camera entity flooding un-managed multicast channels across default switch ports.</p>
+            <p><strong>Resolution:</strong> Re-architected traffic paths by isolating all camera interfaces onto a dedicated, non-routable <strong>Camera VLAN</strong>. Configured IGMP Snooping on Omada managed switches, restricted camera-to-NVR stream paths, and optimized sub-stream parameters in Frigate, stabilizing switch CPU load back to normal baseline levels (&lt;10%).</p>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Operational & Administrative Leadership</h2>
+        <div class="card">
+            <ul style="margin-bottom:0;">
+                <li><strong>System Triage & SaaS Operations:</strong> Experienced resolving cross-platform data inconsistencies across enterprise SaaS tools (WEX Benefits, CoinDesk).</li>
+                <li><strong>Technical Documentation:</strong> Authored step-by-step user manuals, standard operating procedures (SOPs), and audit-ready logs for multi-departmental teams.</li>
+                <li><strong>Asset & Vendor Management:</strong> Managed hardware procurement, licensing tracking, vendor service calls, and ERP data administration (Sage Timberline).</li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="alert-box">
+        <strong>Security & Compliance Note:</strong> All network subnets, IP addresses, and topology references displayed on this portfolio are sanitized abstraction models designed to demonstrate architectural principles without exposing operational credentials or public WAN interfaces.
     </div>
+
 </body>
 </html>
