@@ -86,7 +86,7 @@
             padding: 2px 8px;
             border-radius: 4px;
             font-size: 0.8rem;
-            margin: 2px;
+            margin: 3px 2px;
             font-family: monospace;
         }
 
@@ -94,7 +94,7 @@
             background: rgba(188, 140, 255, 0.1);
             border-left: 4px solid var(--accent-purple);
             padding: 12px 16px;
-            margin: 16px 0;
+            margin: 24px 0;
             border-radius: 0 6px 6px 0;
         }
     </style>
@@ -103,7 +103,7 @@
 
     <header>
         <h1>Thomas Clark, MS</h1>
-        <div class="subtitle">IT Operations Specialist & Systems Engineer</div>
+        <div class="subtitle">IT Support Specialist & Systems Administrator</div>
         <div>
             <span class="cert-badge">CompTIA A+ Certified</span>
             <span class="cert-badge">CompTIA Network+ Certified</span>
@@ -115,9 +115,9 @@
     </header>
 
     <section id="about">
-        <h2>Professional Overview</h2>
+        <h2>Professional Profile</h2>
         <div class="card">
-            <p>Operations and Systems Specialist bringing 10+ years of enterprise process control, cross-platform issue triage, technical writing, and hands-on systems administration. Combining formal administrative leadership with an MS in Management Information Systems and CompTIA Network+ credentials, I specialize in building resilient, segmented network topologies, virtualized server infrastructures, and clear standard operating procedures (SOPs).</p>
+            <p>Detail-oriented Operations & IT Specialist combining 10+ years of professional leadership, financial analysis, and operational coordination with an MS in Management Information Systems and CompTIA Network+ credentials. Skilled at bridging complex business processes with technical execution, implementing segmented network infrastructures, writing standard operating procedures (SOPs), and managing end-user technology resources[cite: 1, 2].</p>
         </div>
     </section>
 
@@ -128,66 +128,89 @@
             <div class="card">
                 <h3 style="color: var(--accent-blue); margin-top:0;">Routing & Network Core</h3>
                 <ul>
-                    <li><strong>Custom pfSense Router:</strong> Self-built security gateway managing inter-VLAN routing, stateful firewall rules, DHCP scopes, and local DNS.</li>
+                    <li><strong>Custom pfSense Firewall:</strong> Self-built security gateway managing inter-VLAN routing, stateful firewall policies, DHCP scopes, and local DNS[cite: 1, 2].</li>
                     <li><strong>Switching & Wireless:</strong> Dual Omada Gigabit PoE switches, Omada Hardware Controller, dual Omada APs, and dedicated Ubiquiti AP.</li>
-                    <li><strong>VLAN Architecture:</strong>
-                        <br><span class="tech-tag">VLAN 10: Servers</span>
-                        <span class="tech-tag">VLAN 20: Security Cameras</span>
-                        <span class="tech-tag">VLAN 30: Guest Network</span>
-                        <span class="tech-tag">VLAN 40: Dedicated Work Isolation</span>
+                    <li><strong>Network VLAN Segmentation:</strong>
+                        <br><span class="tech-tag">VLAN 10: Main Admin</span>
+                        <span class="tech-tag">VLAN 20: Insecure IoT</span>
+                        <span class="tech-tag">VLAN 30: Security Cameras</span>
+                        <span class="tech-tag">VLAN 40: Work Network</span>
+                        <span class="tech-tag">VLAN 60: Guest Network</span>
+                        <span class="tech-tag">VLAN 70: Servers</span>
                     </li>
                 </ul>
             </div>
 
             <div class="card">
-                <h3 style="color: var(--accent-blue); margin-top:0;">Compute & Storage Nodes</h3>
+                <h3 style="color: var(--accent-blue); margin-top:0;">Secure Remote Access & VPN</h3>
                 <ul>
-                    <li><strong>Primary NAS Node (Self-Built):</strong> Unraid OS, 214TB raw storage capacity, host for containerized ecosystem (media, automation, reverse proxy).</li>
-                    <li><strong>Backup NAS Node (Self-Built):</strong> Secondary Unraid OS target handling automated, scheduled array syncs on an isolated subnet.</li>
-                    <li><strong>Off-site/NAS Backups:</strong> Dual off-the-shelf NAS appliances for dedicated configuration snapshots and raw photo vault backups.</li>
+                    <li><strong>Tailscale Mesh VPN:</strong> Deployed subnet routers via Tailscale to allow encrypted, zero-trust remote access to internal resources without exposing open inbound WAN ports.</li>
+                    <li><strong>OpenVPN Server:</strong> Configured native SSL/TLS VPN tunnels on pfSense for encrypted fallback administration and remote endpoint connectivity.</li>
+                    <li><strong>Perimeter Isolation:</strong> Strict firewall rule enforcement ensuring remote administrative sessions are audited and bound to specific VLAN destinations[cite: 2].</li>
                 </ul>
             </div>
         </div>
 
         <div class="card">
-            <h3 style="color: var(--accent-blue); margin-top:0;">Edge AI & Virtualization</h3>
+            <h3 style="color: var(--accent-blue); margin-top:0;">Hypervisors, Compute & Storage Nodes</h3>
             <div class="grid-2">
                 <div>
-                    <h4>Dedicated AI / NVR Server (Self-Built)</h4>
-                    <p>Ubuntu Server running <strong>Frigate NVR</strong> and local LLM models. Leverages an <strong>NVIDIA RTX GPU</strong> for hardware-accelerated computer vision object detection and local inference processing.</p>
+                    <h4>Virtualization & Bare-Metal Hypervisors</h4>
+                    <ul>
+                        <li><strong>VMware ESXi:</strong> Provisioned and configured bare-metal ESXi hypervisor hosts to deploy, snapshot, and manage isolated virtual machines[cite: 1, 2].</li>
+                        <li><strong>Proxmox VE Node:</strong> Deployed Proxmox hypervisor hosting <strong>Home Assistant VM</strong>, local smart lighting integrations, edge MQTT brokers, and centralized media routing.</li>
+                        <li><strong>Dedicated AI / NVR Host:</strong> Ubuntu Server on VLAN 70 running <strong>Frigate NVR</strong> and local AI models accelerated via an <strong>NVIDIA RTX GPU</strong>.</li>
+                    </ul>
                 </div>
                 <div>
-                    <h4>Proxmox Hypervisor Node</h4>
-                    <p>Mini PC host running Proxmox VE. Hosts <strong>Home Assistant</strong> virtual machine integrating Frigate AI triggers, local smart-lighting automations, edge MQTT brokers, and centralized media distribution.</p>
+                    <h4>NAS Storage Array Nodes</h4>
+                    <ul>
+                        <li><strong>Primary Unraid NAS (Self-Built):</strong> 214TB raw storage array hosting media streaming and containerized services on Server VLAN 70.</li>
+                        <li><strong>Backup Unraid NAS (Self-Built):</strong> Secondary target on VLAN 70 handling scheduled, automated array syncs.</li>
+                        <li><strong>Off-site/NAS Backups:</strong> Dual off-the-shelf NAS appliances for dedicated configuration snapshots and photo vault backups.</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="troubleshooting">
-        <h2>Systems Triage & Performance Optimization</h2>
+        <h2>Systems Triage & Network Optimization</h2>
         
         <div class="card">
-            <h3 style="margin-top:0;">Case Study: Resolving Network Switch CPU Spikes & RTSP Stream Degradation</h3>
-            <p><strong>Problem:</strong> During security camera stream ingestion, the primary core network switch experienced severe CPU load spikes (reaching 90%+ utilization), causing packet drops and delayed video rendering across local interfaces.</p>
-            <p><strong>Root-Cause Analysis:</strong> Isolated the high CPU utilization to an aggressive High-Bitrate RTSP stream broadcast from a Reolink camera entity flooding un-managed multicast channels across default switch ports.</p>
-            <p><strong>Resolution:</strong> Re-architected traffic paths by isolating all camera interfaces onto a dedicated, non-routable <strong>Camera VLAN</strong>. Configured IGMP Snooping on Omada managed switches, restricted camera-to-NVR stream paths, and optimized sub-stream parameters in Frigate, stabilizing switch CPU load back to normal baseline levels (&lt;10%).</p>
+            <h3 style="margin-top:0;">Case Study: Resolving Network Switch CPU Spikes & Stream Drops</h3>
+            <p><strong>Problem:</strong> High CPU utilization (peaking at 90%+) on the core managed switch caused by video stream ingestion, leading to latency and packet drops across local interfaces.</p>
+            <p><strong>Root-Cause Analysis:</strong> Isolated the performance degradation to high-bitrate RTSP streams from a Reolink IP camera entity flooding unconstrained multicast channels across default switch ports.</p>
+            <p><strong>Resolution:</strong> Isolated all surveillance hardware onto dedicated <strong>Camera VLAN 30</strong>, enabled IGMP Snooping on Omada switches to restrict multicast traffic, and optimized stream settings in Frigate. Re-established baseline switch CPU load to under 10%.</p>
         </div>
     </section>
 
-    <section id="experience">
-        <h2>Operational & Administrative Leadership</h2>
-        <div class="card">
-            <ul style="margin-bottom:0;">
-                <li><strong>System Triage & SaaS Operations:</strong> Experienced resolving cross-platform data inconsistencies across enterprise SaaS tools (WEX Benefits, CoinDesk).</li>
-                <li><strong>Technical Documentation:</strong> Authored step-by-step user manuals, standard operating procedures (SOPs), and audit-ready logs for multi-departmental teams.</li>
-                <li><strong>Asset & Vendor Management:</strong> Managed hardware procurement, licensing tracking, vendor service calls, and ERP data administration (Sage Timberline).</li>
-            </ul>
+    <section id="transferable-skills">
+        <h2>Transferable Leadership & Management Competencies</h2>
+        
+        <div class="grid-2">
+            <div class="card">
+                <h3 style="color: var(--accent-blue); margin-top:0;">Leadership & Team Operations</h3>
+                <ul>
+                    <li><strong>Operational Coordination:</strong> Led daily business operations, equipment allocations, vendor contracts, and inter-departmental workflows[cite: 1, 2].</li>
+                    <li><strong>User Support & Training:</strong> Authored clear end-user training guides, SOPs, and system onboarding manuals for non-technical staff[cite: 1, 2].</li>
+                    <li><strong>Problem Resolution:</strong> Managed cross-platform issue escalation, tracking support requests, and implementing process improvements[cite: 1, 2].</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3 style="color: var(--accent-blue); margin-top:0;">Financial Tracking & Administration</h3>
+                <ul>
+                    <li><strong>Financial Reconciliation:</strong> Managed treasury operations, investigated complex financial workflow discrepancies, and maintained audit-ready compliance records[cite: 2].</li>
+                    <li><strong>Asset & Inventory Control:</strong> Overseeing purchasing requisitions, equipment inventories, software licensing tracking, and vendor repairs[cite: 1, 2].</li>
+                    <li><strong>System Data Integrity:</strong> Managed department datasets and purchase records within enterprise ERP tools (Sage Timberline)[cite: 2].</li>
+                </ul>
+            </div>
         </div>
     </section>
 
     <div class="alert-box">
-        <strong>Security & Compliance Note:</strong> All network subnets, IP addresses, and topology references displayed on this portfolio are sanitized abstraction models designed to demonstrate architectural principles without exposing operational credentials or public WAN interfaces.
+        <strong>Security & Compliance Note:</strong> All network subnets, IP ranges, and topology references displayed on this portfolio are abstracted models designed to demonstrate architectural principles without exposing live public WAN interfaces or private credentials.
     </div>
 
 </body>
